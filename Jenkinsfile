@@ -41,10 +41,13 @@ pipeline {
       }
       post {
         always {
-          junit 'app/build/test-results/test/**/*.xml'
-        }
-      }
-    }
+          archiveArtifacts artifacts: 'app/build/libs/*.jar', fingerprint: true, allowEmptyArchive: true
+
+          junit testResults: 'app/build/test-results/test/*.xml',
+          allowEmptyResults: true,
+          keepLongStdio: true
+  }
+}
 
     stage('Build Docker Image') {
       steps {
