@@ -1,0 +1,16 @@
+# Java / Gradle
+build/
+.gradle/
+
+# Logs
+*.log
+logs/
+
+# Env
+.env
+
+# OS
+.DS_Store
+
+# Node
+node_modules/
