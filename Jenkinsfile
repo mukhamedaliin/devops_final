@@ -46,9 +46,9 @@ pipeline {
           junit testResults: 'app/build/test-results/test/*.xml',
           allowEmptyResults: true,
           keepLongStdio: true
+        }
       }
     }
-
     stage('Build Docker Image') {
       steps {
         sh '''
